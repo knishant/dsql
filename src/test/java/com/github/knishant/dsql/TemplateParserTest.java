@@ -12,7 +12,7 @@ public class TemplateParserTest
     public void testParser()
     {
         String template = "a b c #if($var1) some content #end";
-        JpaQueryBuilderFactory jqbFactory = new JpaQueryBuilderFactory();
+        QueryBuilderFactory jqbFactory = new QueryBuilderFactory();
         assertEquals("a b c  some content ",
                 jqbFactory.create(template).addConditionalParam("var1", true).build());
         assertEquals("a b c ",

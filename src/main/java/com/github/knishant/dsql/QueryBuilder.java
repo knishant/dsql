@@ -4,25 +4,25 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public final class JpaQueryBuilder
+public final class QueryBuilder
 {
-    private static final Logger LOGGER = Logger.getLogger(JpaQueryBuilder.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(QueryBuilder.class.getName());
 
     private final Template template;
     private final ExecutionContext context = new ExecutionContext();
 
-    JpaQueryBuilder(Template template)
+    QueryBuilder(Template template)
     {
         this.template = template;
     }
 
-    public JpaQueryBuilder addConditionalParam(String name, boolean value)
+    public QueryBuilder addConditionalParam(String name, boolean value)
     {
         context.addParam(name, value);
         return this;
     }
 
-    public JpaQueryBuilder addConditionalParam(String name, Optional<?> optional)
+    public QueryBuilder addConditionalParam(String name, Optional<?> optional)
     {
         return addConditionalParam(name, optional.isPresent());
     }
