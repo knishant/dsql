@@ -4,9 +4,9 @@ options {
 }
 PARSER_BEGIN(TemplateParser)
 
-package com.github.knishant.dsql;
+package io.github.knishant.dsql;
 
-import com.github.knishant.dsql.Template;import java.io.*;
+import java.io.*;
 import java.util.*;
 
 public class TemplateParser {
@@ -40,7 +40,7 @@ TOKEN :
 
 Template parse():
 {
-    com.github.knishant.dsql.Expression exp;
+    io.github.knishant.dsql.Expression exp;
     Template tem = new Template();
 }
 {

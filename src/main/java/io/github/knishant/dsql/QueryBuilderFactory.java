@@ -1,4 +1,4 @@
-package com.github.knishant.dsql;
+package io.github.knishant.dsql;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

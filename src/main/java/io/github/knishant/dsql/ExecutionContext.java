@@ -1,4 +1,4 @@
-package com.github.knishant.dsql;
+package io.github.knishant.dsql;
 
 import java.util.HashMap;
 import java.util.Map;
