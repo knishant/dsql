@@ -22,6 +22,7 @@ public final class QueryBuilder
         return this;
     }
 
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     public QueryBuilder addConditionalParam(String name, Optional<?> optional)
     {
         return addConditionalParam(name, optional.isPresent());

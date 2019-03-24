@@ -3,9 +3,8 @@ plugins {
 }
 apply plugin: "java"
 
-project.archivesBaseName = 'moni-jpatemplate'
-
-version = '1.0.0'
+group = 'com.github.knishant'
+version = '0.0.1'
 
 targetCompatibility = 1.8
 sourceCompatibility = 1.8
