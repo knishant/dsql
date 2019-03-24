@@ -1,0 +1,82 @@
+options {
+    LOOKAHEAD=1;
+    STATIC = false;
+}
+PARSER_BEGIN(TemplateParser)
+
+package com.github.knishant.dsql;
+
+import com.github.knishant.dsql.Template;import java.io.*;
+import java.util.*;
+
+public class TemplateParser {
+
+    public static Template parse(String str) throws RuntimeException
+    {
+        TemplateParser parser = new TemplateParser(new StringReader(str));
+        try{
+            return parser.parse();
+        }
+        catch (RuntimeException e)
+        {
+            throw e;
+        }
+        catch (Exception e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+}
+
+PARSER_END(TemplateParser)
+
+TOKEN :
+{
+  < IFSTMT : "#if(" [ "$"] ([ "0"-"9", "a"-"z", "A"-"Z" ])+ ")">
+| < END : "#end">
+| < CONTENT : (~["#"])+>
+}
+
+
+Template parse():
+{
+    com.github.knishant.dsql.Expression exp;
+    Template tem = new Template();
+}
+{
+    (
+    exp = content() {tem.addExpression(exp);}
+    |
+    exp = ifStatement() {tem.addExpression(exp);}
+    |
+    exp = endIfStatement() {tem.addExpression(exp);}
+    )*
+    {tem.close(); return tem;}
+}
+
+ContentExpression content():
+{
+    Token t;
+}
+{
+    t = <CONTENT>
+    {return new ContentExpression(t.image); }
+}
+
+IfExpression ifStatement():
+{
+    Token t;
+}
+{
+    t = <IFSTMT>
+    {return new IfExpression(t.image.substring(5,t.image.length() -1));}
+}
+
+EndExpression endIfStatement():
+{
+    Token t;
+}
+{
+    t = <END>
+    {return new EndExpression();}
+}

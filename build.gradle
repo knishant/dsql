@@ -1,0 +1,30 @@
+plugins {
+    id "ca.coglinc.javacc" version "2.4.0"
+}
+apply plugin: "java"
+
+project.archivesBaseName = 'moni-jpatemplate'
+
+version = '1.0.0'
+
+targetCompatibility = 1.8
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    javacc 'net.java.dev.javacc:javacc:7.0.4'
+    testImplementation 'junit:junit:4.12'
+}
+
+sourceSets {
+    main {
+        java {
+            //build/generated/javacc
+            srcDir compileJavacc.outputDirectory
+        }
+    }
+}
+
