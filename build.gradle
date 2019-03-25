@@ -4,7 +4,7 @@ plugins {
 apply plugin: "java"
 
 group = 'io.github.knishant'
-version = '0.0.1'
+version = '0.5.0'
 
 targetCompatibility = 1.8
 sourceCompatibility = 1.8
