@@ -2,7 +2,7 @@
 
 Library to create dynamic sql / jpa query.
 
-Instead of creating dynamic sql but conditional string concatenation, one can add conditional template sections in the query.
+Instead of creating dynamic sql by conditional string concatenation, one can add conditional template sections in the query.
 
 Here is an example of quering for students given the part of student name 
 and / or part of her department name.
@@ -97,3 +97,6 @@ Rules
 
   * #If conditions cannot be nested. ie #end must appear before the next #if starts.
   * All the variables mentioned in #if statement must be set before building the query
+  * A variable may appear multiple times in a query template, like hasDepName
+  * Variable can be named anything, need not be a boolean name starting with has or is
+
