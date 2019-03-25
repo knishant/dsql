@@ -5,30 +5,20 @@ import java.util.Map;
 
 public final class ExecutionContext
 {
-    private final Map<String, Object> params = new HashMap<>();
+    private final Map<String, Boolean> params = new HashMap<>();
 
-    void addParam(String name, Object value)
+    void addParam(String name, boolean value)
     {
         params.put(name, value);
     }
 
     boolean getBooleanParam(String name)
     {
-        Object value = params.get(name);
+        Boolean value = params.get(name);
         if (value == null)
         {
             throw new RuntimeException("boolean param " + name + " is missing");
         }
-        if (!(value instanceof Boolean))
-        {
-            throw new RuntimeException("param " + name + " is not a boolean variable");
-        }
-        return (Boolean) value;
+        return value;
     }
-
-    Object getParam(String name)
-    {
-        return params.get(name);
-    }
-
 }
