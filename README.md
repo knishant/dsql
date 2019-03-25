@@ -35,7 +35,9 @@ and / or part of her department name.
 
 Code 
 
-  * Create a class level instance of QueryBuilderFactory. Factory is thread safe.
+  * Create a class level instance of QueryBuilderFactory. 
+    * Factory caches the parsed template.
+    * Factory is thread safe.
   * Create a query template
     * query is a regular jpa query with some template contents like #if($hasDepName) and #end
     * if the conditional param hasDepName is set to true then the content within
@@ -72,6 +74,7 @@ WHERE 1=1
 
 order by s.name
 ```
+This is where you need the condition 1=1, otherwise the query will be incorrect.
 
 hasName: true, hasDepName: false
 ```
