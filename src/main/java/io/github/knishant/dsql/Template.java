@@ -3,7 +3,7 @@ package io.github.knishant.dsql;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Template extends Expression
+class Template extends Expression
 {
     private final Collection<Expression> expressions = new ArrayList<>();
     private IfExpression ifExpr;

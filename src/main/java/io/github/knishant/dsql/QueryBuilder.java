@@ -4,7 +4,7 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public final class QueryBuilder
+final class QueryBuilder
 {
     private static final Logger LOGGER = Logger.getLogger(QueryBuilder.class.getName());
 

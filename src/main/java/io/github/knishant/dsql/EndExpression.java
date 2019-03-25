@@ -1,6 +1,6 @@
 package io.github.knishant.dsql;
 
-public class EndExpression extends Expression
+class EndExpression extends Expression
 {
     @Override
     public String evaluate(ExecutionContext context)

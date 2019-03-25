@@ -3,12 +3,12 @@ package io.github.knishant.dsql;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class IfExpression extends Expression
+class IfExpression extends Expression
 {
     private final String varName;
     private final Collection<Expression> expressions = new ArrayList<>();
 
-    public IfExpression(String varName)
+    IfExpression(String varName)
     {
         this.varName = varName;
     }
@@ -28,7 +28,7 @@ public class IfExpression extends Expression
         }
     }
 
-    public void addContent(Expression expression)
+    void addContent(Expression expression)
     {
         expressions.add(expression);
     }

@@ -3,7 +3,7 @@ package io.github.knishant.dsql;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class ExecutionContext
+final class ExecutionContext
 {
     private final Map<String, Boolean> params = new HashMap<>();
 

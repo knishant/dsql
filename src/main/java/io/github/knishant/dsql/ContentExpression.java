@@ -1,10 +1,10 @@
 package io.github.knishant.dsql;
 
-public class ContentExpression extends Expression
+class ContentExpression extends Expression
 {
     private final String content;
 
-    public ContentExpression(String content)
+    ContentExpression(String content)
     {
         this.content = content;
     }
