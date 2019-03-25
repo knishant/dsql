@@ -4,7 +4,9 @@ Library to create dynamic sql / jpa query.
 
 Instead of creating dynamic sql by conditional string concatenation, one can add conditional template sections in the query.
 
-Here is an example of quering for students given the part of student name 
+### Sample
+
+Here is an example of querying for students given the part of student name 
 and / or part of her department name.
 
 ```java
@@ -33,7 +35,7 @@ and / or part of her department name.
     }
 ```
 
-Code 
+### Code Explanation
 
   * Create a class level instance of QueryBuilderFactory. 
     * Factory caches the parsed template.
@@ -52,7 +54,9 @@ Code
   * Build the dynamic query
   * Rest is just a sample of creating JPA Typed Query
     * Note how using optional made setting params easier. 
-    
+
+### Result
+
 Resulting queryString based on the value of the two params.
 
 hasName: true, hasDepName: true
@@ -96,7 +100,7 @@ AND de.name like :depName
 order by s.name
 ```
 
-Rules
+### Rules
 
   * #If conditions cannot be nested. ie #end must appear before the next #if starts.
   * All the variables mentioned in #if statement must be set before building the query
